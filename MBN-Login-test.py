@@ -57,7 +57,7 @@ class MonBureauNumeriqueLogin:
             self.driver = webdriver.Firefox(options = options)
             self.driver.set_window_position(1000, 0)
             self.XPATHs = {
-                "Acceuil": "/html/body/div[1]/nav/ul[2]/li[1]",
+                "acceuil": "/html/body/div[1]/nav/ul[2]/li[1]",
                 "Messagerie": "/html/body/div[1]/nav/ul[2]/li[2]",
                 "Cahier": "/html/body/div[1]/nav/ul[2]/li[3]",
                 "Classeur": "/html/body/div[1]/nav/ul[2]/li[4]",
@@ -84,7 +84,7 @@ class MonBureauNumeriqueLogin:
                 self.driver.get("https://www.monbureaunumerique.fr/")
                 self.driver.maximize_window()
                 print(Color("yellow")("[*] lance la page"))
-                self.wait_for_loading()
+                print(Color('cyan')("[!] -"))
                 self.driver.find_element_by_xpath("/html/body/div/div/div/div[2]/a[2]").click()
                 self.driver.find_element_by_xpath("/html/body/main/div/div/div[1]/div/div/form/div[1]/div/label").click()
                 print(Color("green")("[*] Choix de connection"))
@@ -159,32 +159,32 @@ class PromptShell(cmd.Cmd):
 
     def do_Accueil(self, arg):
         "Commande pour aller a l'accueil"
-        engine.menu(arg)
+        engine.menu("accueil")
 
 
     def do_Messagerie(self, arg):
         "Commande pour aller a la messagerie"
-        engine.menu(arg)
+        engine.menu("Messagerie")
 
 
     def do_Cahier(self,arg):
         "Commande pour aller au cahier de texte"
-        engine.menu(arg)
+        engine.menu("Cahier")
 
 
     def do_Classeur(self,arg):
         "Commande pour aller au classeur pedagogique"
-        engine.menu(arg)
+        engine.menu("Classeur")
 
 
     def do_Absences(self,arg):
         "Commande pour aller au absences"
-        engine.menu(arg)
+        engine.menu("Absences")
 
 
     def do_Evaluations(self,arg):
         "Commande pour aller voir ses notes O_o"
-        engine.menu(arg)
+        engine.menu("Evaluations")
 
 
     def do_Moodle(self,arg):
